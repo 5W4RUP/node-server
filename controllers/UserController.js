@@ -5,6 +5,7 @@ const dotenv = require('dotenv')
 const sendEmail = require('./../utils/email');
 const User = require('../models/user-model')
 dotenv.config()
+const factory = require('./factoryHandler');
 
 createUser = async (req, res) => {
     try {
@@ -93,6 +94,7 @@ updateUser = async (req, res) => {
         })
     }
 }
+getUsersFactory = factory.getOne(User,{path: '_id'});
 
 changePassword = async (req, res) => {
     const body = req.body
@@ -265,5 +267,6 @@ module.exports = {
     getUserById,
     loginUser,
     changePassword,
+    getUsersFactory,
     fbLogin
 }

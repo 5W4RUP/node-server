@@ -11,7 +11,8 @@ router.get('/', (req, res) => {
 })
 router.post('/user', UserCtrl.createUser)
 
-// router.get('/users', UserCtrl.getUsers)
+router.get('/users', UserCtrl.getUsers)
+router.get('/userfactory/:id',  UserCtrl.getUsersFactory) /**By using factory function */
 
 // router.get('/user/:id', authenticateUser, UserCtrl.getUsers)
 
