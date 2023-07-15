@@ -6,8 +6,13 @@ const formidable = require('formidable')
 const fs = require('fs')
 const sendEmail = require('./../utils/email');
 const path = require('path')
+const factory = require('./factoryHandler');
+
 /** get the data by created by and active and not deleted note */
 const uploadPath = path.join(process.cwd(), 'public', 'uploads/')
+
+getNoteFactory = factory.getOne(User,{path: '_id'});
+
 getNotes = async (req, res) => {
     try {
         const note = await Note.find({
@@ -291,4 +296,5 @@ module.exports = {
     deleteNote,
     getNotes,
     createNote,
+    getNoteFactory,
 }

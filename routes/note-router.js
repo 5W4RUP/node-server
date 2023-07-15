@@ -11,7 +11,9 @@ router.put('/note',authenticateUser, NoteCtrl.updateNote)
 router.delete('/note', authenticateUser, NoteCtrl.deleteNote)
 
 router.post('/note',authenticateUser,NoteCtrl.createNote);
+router.get('/notefactory/:id', NoteCtrl.getNoteFactory); 
 
+/**By using factory function */
 
 // router
 //   .route('/note')
